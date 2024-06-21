@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title %></title>
+</head>
+
+<body>
+
+    <div class="container">
+        <form action="/post/create" method="post">
+            <h3>Create Post</h3>
+            <input type="text" placeholder="Post Title" name="title">
+             <select name="category">
+                <option  value="selectOne" disabled selected>Select One</option>
+                <option value="Educational">Educational</option>
+                <option value="Politics">Politics</option>
+                <option value="Family">Family</option>
+                <option value="Lifestyle">Lifestyle</option>
+                <option value="Romance">Romance</option>
+                <option value="Science & Technology">Science & Technology</option>
+             </select>
+            <textarea name="desc"></textarea>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+
+
+</body>
+
+</html>

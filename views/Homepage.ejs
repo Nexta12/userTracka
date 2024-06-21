@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%- title %></title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+ 
+<div class="postsContainer">
+    
+    <div class="postsCards">
+
+         <% if(allposts.length > 0){ %>
+            <% allposts.forEach(post=>{ %>
+            <div class="singlePost">
+                <img src="/img/raytalks.png" alt="post-Image">
+                <h3><%= post.title %></h3>
+                <span>Category: <%= post.category %></span>
+                <span>Author: <%= post.author %></span>
+                <div class="desc">
+                  <%= post.snippet %>...
+                </div>
+                <a href="/post/<%=post.slug %>" class="ReadMorelink">Read More</a>
+            
+            </div>
+
+           <% }) %>
+
+       <%  }else{ %>
+          <div class="noPost">
+            No Posts Yet... !, Sign In to Create a Post
+        </div>
+        <% } %>
+        
+     
+
+    </div>
+</div>
+
+
+   <!-- <div class="postsContainer">
+
+      <h3>Your Recently Read Posts</h3>
+        <div class="postsCards">
+        
+       <div class="singlePost">
+           <img src="/img/cover.jpg" alt="post-Image">
+            <h3>Post Title IS Here</h3>
+             <span>Category: Educational</span>
+            <span>Author: Emeka</span>
+             <div class="desc">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere dolorum commodi aliquid eius! Sed libero aliquam fuga,
+                doloribus officia in dolores magni aperiam dolorum eveniet autem optio. Expedita, voluptas sunt!
+             </div>
+             <a href="/post/dhddhdh" class="ReadMorelink">Read More...</a>
+          
+       </div>
+    
+      
+    </div>
+   </div> -->
+
+
+</body>
+</html>
