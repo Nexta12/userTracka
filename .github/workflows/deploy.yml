@@ -34,11 +34,16 @@ jobs:
           node-version: '20'
 
       - name: Set up SSH connection
-        uses: webfactory/ssh-agent@v1.0.0
+        uses: appleboy/ssh-action@master
         with:
-          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
-          ssh-passphrase: ${{ secrets.SSH_PASSPHRASE }}
-
-
-      - name: Deploy to Server
-        run: ssh -o StrictHostKeyChecking=no ${{ secrets.USERNAME }}@${{ secrets.VPS_IP_ADDRESS }} "cd /home/Nexta12/userTracka && git pull origin main"
+          host: ${{ secrets.VPS_IP_ADDRESS }}
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.SSH_PASSPHRASE }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: 22
+          script: |
+            cd ~/home/Nexta12/userTracka
+            git pull origin main
+            git status
+            npm install --only=prod
+            pm2 restart userTracka
