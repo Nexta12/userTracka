@@ -42,7 +42,7 @@ jobs:
           key: ${{ secrets.SEVER_SSH_KEY }}
           port: ${{ secrets.PORT }}
           script: |
-            cd ~/home/Nexta12/userTracka
+            cd ~/userTracka
             git pull origin main
             git status
             npm install --only=prod
