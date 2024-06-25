@@ -46,4 +46,5 @@ jobs:
             git pull origin main
             git status
             npm install --only=prod
-            pm2 restart userTracka
+            pm2 restart server.js
+
